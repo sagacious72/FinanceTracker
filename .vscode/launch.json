@@ -1,0 +1,27 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch CLI",
+            "program": "${workspaceFolder}/import-cli.js",
+            "request": "launch",
+            "args": ["./financial_data/patelco 1.csv", "Patelco", "./financial_data/cfcu 24.csv", "CFCU", "./financial_data/patelco cc.csv", "Patelco CC", "./financial_data/paypal.csv", "Paypal", "./financial_data/paypal2.csv", "Paypal", ],
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "node"
+        },
+        {
+            "name": "Electron Main",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron",
+            "args": ["."],
+            "cwd": "${workspaceFolder}",
+            "outputCapture": "std"
+        }
+    ]
+}

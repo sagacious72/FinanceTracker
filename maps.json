@@ -1,0 +1,195 @@
+{
+  "Patelco": {
+    "account": {
+        "name": "Patelco Checking 1",
+        "type": "ASSET", 
+        "initial_balance": 236665.16
+    },
+    "Date": "Posting Date",
+    "Amount": "Amount",
+    "Payee": "Description",
+    "BankCategory": "Transaction Category",
+    "dateFormat": "MM/dd/yyyy",    
+    "category_mappings": [ 
+      {"bank_cat": "Groceries", "internal_cat": "Groceries"},
+      {"bank_cat": "Restaurants & Dining", "internal_cat": "Dining"},
+      {"bank_cat": "Travel & Commute", "internal_cat": "Travel"},
+      {"bank_cat": "Gasoline/Fuel", "internal_cat": "Fuel"},
+      {"bank_cat": "Healthcare & Pharmacy", "internal_cat": "Health"},
+      {"bank_cat": "Entertainment", "internal_cat": "Entertainment"},
+      {"bank_cat": "Hobbies", "internal_cat": "Hobbies"},
+      {"bank_cat": "Shopping", "internal_cat": "Shopping"},
+      {"bank_cat": "Home Supplies", "internal_cat": "Home Supplies"},
+      {"bank_cat": "Office Supplies", "internal_cat": "Home Supplies"},
+      {"bank_cat": "Child & Dependent Expenses", "internal_cat": "Child Health and Education"},
+      {"bank_cat": "Insurance", "internal_cat": "Insurance"},
+      {"bank_cat": "Loans", "internal_cat": "Transfers"},
+      {"bank_cat": "Deposits", "internal_cat": "Transfers"},
+      {"bank_cat": "Transfers", "internal_cat": "Transfers"},
+      {"bank_cat": "Taxes", "internal_cat": "Taxes"}
+    ],
+    "rules": [
+        {
+            "match": "ach deposit: cfcu",
+            "category": "Transfers",
+            "party": "CFCU"
+        },
+        {
+            "match": "coastal federal credit union deposit",
+            "category": "Transfers",
+            "party": "CFCU"
+        },
+        {
+            "match": "ach deposit: coastal",
+            "category": "Transfers",
+            "party": "CFCU"
+        },
+        {
+            "match": "ach deposit: t-c",
+            "category": "Other Income",
+            "party": "TIAA-CREF"
+        },
+        {
+            "match": "to share \\*\\*\\*xx9-1",
+            "category": "Shared Expenses",
+            "party": "Jennifer"
+        },
+        {
+            "match": "to loan \\*\\*\\*xx8-",
+            "category": "Transfers",
+            "party": "CC Payment"
+        },
+        {
+            "match": "liveoakeduconsu",
+            "category": "Child Health and Education",
+            "party": "Live Oak Consulting"
+        }
+    ]
+  },
+  "Patelco CC": {
+    "account": {
+        "name": "Patelco Credit Card",
+        "type": "ASSET", 
+        "initial_balance": 0.00
+    },
+    "Date": "Posting Date",
+    "Amount": "Amount",
+    "Payee": "Description",
+    "BankCategory": "Transaction Category",
+    "dateFormat": "MM/dd/yyyy",    
+    "category_mappings": [ 
+      {"bank_cat": "Groceries", "internal_cat": "Groceries"},
+      {"bank_cat": "Restaurants & Dining", "internal_cat": "Dining"},
+      {"bank_cat": "Travel & Commute", "internal_cat": "Travel"},
+      {"bank_cat": "Gasoline/Fuel", "internal_cat": "Fuel"},
+      {"bank_cat": "Healthcare & Pharmacy", "internal_cat": "Health"},
+      {"bank_cat": "Entertainment", "internal_cat": "Entertainment"},
+      {"bank_cat": "Hobbies", "internal_cat": "Hobbies"},
+      {"bank_cat": "Shopping", "internal_cat": "Shopping"},
+      {"bank_cat": "Home Supplies", "internal_cat": "Home Supplies"},
+      {"bank_cat": "Office Supplies", "internal_cat": "Home Supplies"},
+      {"bank_cat": "Child & Dependent Expenses", "internal_cat": "Child Health and Education"},
+      {"bank_cat": "Insurance", "internal_cat": "Insurance"},
+      {"bank_cat": "Loans", "internal_cat": "Transfers"},
+      {"bank_cat": "Deposits", "internal_cat": "Transfers"},
+      {"bank_cat": "Transfers", "internal_cat": "Transfers"}
+    ],
+    "rules": [
+        {
+            "match": "from share \\*\\*\\*xx8-1",
+            "category": "Transfers",
+            "party": "CC Payment"
+        },
+        {
+            "match": "vtg\\*heartwork",
+            "category": "Health",
+            "party": "HeartWork"
+        }
+    ]
+  },
+  "CFCU": {
+    "account": {
+        "name": "CFCU",
+        "type": "ASSET", 
+        "initial_balance": 339046.71
+    },
+    "Date": "Date",
+    "Amount": "Amount",
+    "Payee": "Description",
+    "BankCategory": "Category",
+    "dateFormat": "MM/dd/yy",    
+    "category_mappings": [],
+    "rules": [
+        {
+            "match": "sony",
+            "category": "Paycheck",
+            "party": "Sony"
+        },
+        {
+            "match": "pgande",
+            "category": "Utilities",
+            "party": "PG&E"
+        },
+        {
+            "match": "verizon",
+            "category": "Utilities",
+            "party": "Verizon"
+        },
+        {
+            "match": "coastal fcu",
+            "category": "Transfers",
+            "party": "Patelco"
+        },
+        {
+            "match": "ach transfer to 3810",
+            "category": "Transfers",
+            "party": "Patelco"
+        },
+        {
+            "match": "dividend",
+            "category": "Other Income",
+            "party": "CFCU"
+        }
+    ]
+  },
+  "Paypal": {
+    "account": {
+        "name": "Paypal",
+        "type": "ASSET", 
+        "initial_balance": 0.00
+    },
+    "Date": "Date",
+    "Amount": "Amount",
+    "Payee": "Name",
+    "BankCategory": "Item Title",
+    "dateFormat": "MM/dd/yyyy",    
+    "category_mappings": [],
+    "rules": [
+        {
+            "match": "doordash",
+            "category": "Dining",
+            "party": "DoorDash"
+        },
+        {
+            "match": "dreamhost",
+            "category": "Utilities",
+            "party": "DreamHost"
+        },
+        {
+            "match": "slice",
+            "category": "Dining",
+            "party": "Slice"
+        },
+        {
+            "match": "worldpantry",
+            "category": "Groceries",
+            "party": "World Pantry"
+        },
+        {
+            "match": "google",
+            "category": "Shopping",
+            "party": "Google"
+        }
+    ]
+  }
+}
